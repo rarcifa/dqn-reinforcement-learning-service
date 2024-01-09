@@ -31,12 +31,6 @@ poetry install
 
 2. Run the main script:
 
-   - Using Python directly:
-
-     ```bash
-     py main.py
-     ```
-
    - Using Poetry to run the module:
 
      ```bash
