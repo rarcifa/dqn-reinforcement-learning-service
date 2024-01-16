@@ -6,7 +6,7 @@ from dqn_reinforcement_learning.model.dqn import DQN
 from dqn_reinforcement_learning.utils.replay_memory import ReplayMemory
 from dqn_reinforcement_learning.utils.constants import *
 
-# Set up environment
+# Set up environments
 env = gym.make("LunarLander-v2", render_mode="human")
 n_actions = getattr(env.action_space, "n", None)
 state, info = env.reset()
