@@ -1,6 +1,6 @@
 # Deep Q-Network (DQN) Agent for Reinforcement Learning
 
-This repository contains a Deep Q-Network (DQN) agent implemented in Python for reinforcement learning tasks using the [OpenAI Gym](https://gym.openai.com/) environment. The agent is designed to learn and make optimal decisions in environments with discrete action spaces.
+This repository contains a Deep Q-Network (DQN) agent implemented in Python for reinforcement learning tasks using the [OpenAI Gym](https://github.com/openai/gym) environment. The agent is designed to learn and make optimal decisions in environments with discrete action spaces.
 
 ## Prerequisites
 
