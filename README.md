@@ -24,7 +24,7 @@ pip install torch numpy matplotlib gym
 
 ```bash
 git clone https://github.com/rarcifa/dqn-reinforcement-learning-service
-cd your-repo-name
+cd dqn-reinforcement-learning-service
 ```
 
 2. Run the main script:
