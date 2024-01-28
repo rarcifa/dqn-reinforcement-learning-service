@@ -1,23 +1,17 @@
-from model.dqn import DQN
-from utils.replay_memory import ReplayMemory
-from utils.constants import *
-
 import gymnasium as gym
-import matplotlib
-import matplotlib.pyplot as plt
 import torch
 from torch import optim
-from typing import List
+
+from dqn_reinforcement_learning.model.dqn import DQN
+from dqn_reinforcement_learning.utils.replay_memory import ReplayMemory
+from dqn_reinforcement_learning.utils.constants import *
 
 # Set up environment
 env = gym.make("CartPole-v1")
 n_actions = getattr(env.action_space, "n", None)
 state, info = env.reset()
 n_observations = len(state)
-
-# Set up matplotlib
-is_ipython = "inline" in matplotlib.get_backend()
-plt.ion()
+steps_done = 0
 
 # GPU usage configuration
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -28,6 +22,3 @@ TARGET_NET = DQN(n_observations, n_actions).to(device)
 TARGET_NET.load_state_dict(POLICY_NET.state_dict())
 optimizer = optim.AdamW(POLICY_NET.parameters(), lr=LR, amsgrad=True)
 memory = ReplayMemory(10000)
-
-STEPS_DONE = 0
-episode_durations: List[int] = []

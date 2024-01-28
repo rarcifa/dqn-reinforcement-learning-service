@@ -1,20 +1,20 @@
 """
-Utilities for Reinforcement Learning.
+Replay Memory Module.
 
-This module contains utility structures and classes used in reinforcement learning.
+Module containing utility structures and classes used in reinforcement learning.
+
 It includes a namedtuple for representing transitions in the environment and a class 
 for storing these transitions in a replay memory for later retrieval during training.
 
 Classes:
     ReplayMemory: A simple storage class for transitions observed during training.
-
-NamedTuple:
-    Transition: A named tuple representing a state transition in the environment.
 """
 
 from collections import namedtuple, deque
 from typing import Any, Deque, List
 import random
+
+from dqn_reinforcement_learning.environment.config import *
 
 Transition = namedtuple(
     "Transition", ("state", "action", "next_state", "reward")

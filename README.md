@@ -7,31 +7,55 @@ This repository contains a Deep Q-Network (DQN) agent implemented in Python for 
 Before running the agent, make sure you have the following dependencies installed:
 
 - Python 3.x
+- Poetry
 - PyTorch
 - NumPy
 - Matplotlib
 - OpenAI Gym
 
-You can install these dependencies using pip:
+You can install Poetry and other dependencies using the following commands:
 
 ```bash
-pip install torch numpy matplotlib gym
+pip install poetry
+poetry install
 ```
 
 ## Usage
 
 1. Clone the repository:
 
-```bash
-git clone https://github.com/rarcifa/dqn-reinforcement-learning-service
-cd dqn-reinforcement-learning-service
-```
+   ```bash
+   git clone https://github.com/rarcifa/dqn-reinforcement-learning-service
+   cd dqn-reinforcement-learning-service
+   ```
 
 2. Run the main script:
 
-```bash
-py main.py
-```
+   - Using Python directly:
+
+     ```bash
+     py main.py
+     ```
+
+   - Using Poetry to run the module:
+
+     ```bash
+     poetry run python -m dqn_reinforcement_learning
+     ```
+
+3. Using Docker:
+
+   - Build the Docker image:
+
+     ```bash
+     docker build -t dqn-reinforcement-learning -f .docker/Dockerfile .
+     ```
+
+   - Run the Docker container:
+
+     ```bash
+     docker run -p 4000:80 dqn-reinforcement-learning
+     ```
 
 The main script main.py initializes the DQN agent, trains it in the specified Gym environment (e.g., CartPole), and visualizes the training progress using Matplotlib.
 

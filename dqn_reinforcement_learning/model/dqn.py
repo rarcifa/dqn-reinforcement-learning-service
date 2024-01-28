@@ -14,10 +14,10 @@ Classes:
     DQN: A deep neural network for Q-learning based reinforcement learning tasks.
 """
 
-from typing import Any
 import torch
 from torch import nn
 import torch.nn.functional as F
+from typing import Any
 
 
 class DQN(nn.Module):
