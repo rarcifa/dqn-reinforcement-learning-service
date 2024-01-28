@@ -2,7 +2,7 @@ from itertools import count
 
 from dqn_reinforcement_learning.agents.defender import Defender
 from dqn_reinforcement_learning.utils.plotter import Plotter
-from dqn_reinforcement_learning.utils.trainer import Trainer
+from dqn_reinforcement_learning.utils.training import Training
 from dqn_reinforcement_learning.model.dqn import DQN
 from dqn_reinforcement_learning.utils.replay_memory import ReplayMemory
 from dqn_reinforcement_learning.utils.constants import *
@@ -13,15 +13,15 @@ def main() -> None:
     """
     Main function for running the reinforcement learning training loop.
 
-    Initializes the necessary components (agent, trainer, plotter) and executes
+    Initializes the necessary components (agent, training, plotter) and executes
     the training loop for a predefined number of episodes. Each episode involves
     interacting with the environment, updating the agent's model, and tracking progress.
     """
 
-    # Initialise actions, plots and model trainer
+    # Initialise actions, plots and model training
     action_selector = Defender(POLICY_NET, EPS_START, EPS_END, EPS_DECAY)
     plotter = Plotter()
-    trainer = Trainer(
+    training = Training(
         POLICY_NET, TARGET_NET, optimizer, memory, TAU, GAMMA, BATCH_SIZE
     )
 
@@ -53,10 +53,10 @@ def main() -> None:
             done = terminated or truncated
 
             # Optimize the model based on the current state and action
-            trainer.optimize_model()
+            training.optimize_model()
 
             # Update the target network
-            trainer.update_target_net()
+            training.update_target_net()
 
             # Process next state
             if terminated:

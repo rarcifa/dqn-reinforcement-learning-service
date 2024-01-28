@@ -1,15 +1,15 @@
 """
-Trainer Module.
+Training Module.
 
-This module provides a Trainer class for managing the training process of a reinforcement learning agent
+This module provides a Training class for managing the training process of a reinforcement learning agent
 using a Deep Q-Network (DQN).
 
-The Trainer class is responsible for optimizing the DQN model, updating the target network, and handling
+The Training class is responsible for optimizing the DQN model, updating the target network, and handling
 the sampling of experiences from the replay memory. This class plays a pivotal role in updating the agent's
 knowledge and improving its performance over time through learning.
 
 Classes:
-    Trainer: Manages the training process of a DQN-based reinforcement learning agent.
+    Training: Manages the training process of a DQN-based reinforcement learning agent.
 """
 
 import torch.nn as nn
@@ -18,11 +18,11 @@ from dqn_reinforcement_learning.environment.config import *
 from dqn_reinforcement_learning.utils.replay_memory import Transition
 
 
-class Trainer:
+class Training:
     """
     Manages the training process of a reinforcement learning agent using a Deep Q-Network (DQN).
 
-    The Trainer class handles the optimization of the policy network, updates the target network,
+    The Training class handles the optimization of the policy network, updates the target network,
     and manages the replay memory. It uses experiences from the memory to update the agent's policy.
 
     Attributes:
@@ -46,7 +46,7 @@ class Trainer:
         batch_size: int,
     ):
         """
-        Initializes the Trainer with networks, optimizer, memory, and training parameters.
+        Initializes the Training with networks, optimizer, memory, and training parameters.
 
         Args:
             policy_net (DQN): The policy network for the agent.
