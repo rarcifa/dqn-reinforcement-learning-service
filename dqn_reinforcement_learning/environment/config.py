@@ -7,7 +7,7 @@ from dqn_reinforcement_learning.utils.replay_memory import ReplayMemory
 from dqn_reinforcement_learning.utils.constants import *
 
 # Set up environment
-env = gym.make("LunarLander-v2", render_mode="human")
+env = gym.make("CartPole-v1")
 n_actions = getattr(env.action_space, "n", None)
 state, info = env.reset()
 n_observations = len(state)
